@@ -8,6 +8,9 @@ const useStyles = makeStyles(theme => ({
     overflow: 'auto',
     paddingTop: 50,
     backgroundColor: 'bisque',
+    [theme.breakpoints.down('sm')]: {
+      paddingTop: 10,
+    },
   },
   media: {
     width: 200,
