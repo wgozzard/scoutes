@@ -22,11 +22,19 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'center',
     height: '100px',
     backgroundColor: 'white',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '2em',
+    },
   },
   media: {
     marginTop: 20,
     width: 560,
     height: 315,
+
+    [theme.breakpoints.down('sm')]: {
+      width: 330,
+      height: 185,
+    },
   },
 
   paper: {
