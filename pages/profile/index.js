@@ -6,7 +6,7 @@ import Video from '../../components/videosection/videoSection';
 const useStyles = makeStyles(theme => ({
   root: {
     overflow: 'auto',
-    paddingTop: 50,
+    paddingTop: 15,
     backgroundColor: 'bisque',
     [theme.breakpoints.down('sm')]: {
       paddingTop: 10,

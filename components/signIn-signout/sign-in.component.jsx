@@ -4,6 +4,7 @@ import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import { auth, signInWithGoogle } from '../../firebase/firebase-config';
 import { TextField } from '@material-ui/core';
 import { withRouter } from 'next/router';
+import styles from './signin.module.scss';
 class SignIn extends Component {
   constructor(props) {
     super(props);
@@ -34,66 +35,50 @@ class SignIn extends Component {
   render() {
     return (
       <MuiThemeProvider>
-        <div
-          style={{
-            maxWidth: '500px',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            fontSize: '1.3em',
-            fontFamily: 'roboto',
-            fontWeight: '300',
-          }}
-        >
-          <div
-            style={{
-              width: '40vw',
-              padding: '20px',
-              display: 'flex',
-              flexDirection: 'column',
-            }}
-          >
-            <form onSubmit={this.handleSubmit}>
-              <p>Enter Your email and password or SignIn with google.</p>
-              <TextField
-                placeholder="Enter Your Email"
-                onChange={e => this.handleChange('email', e)}
-                label="Email"
-                type="email"
-                value={this.state.email}
-                fullWidth
-                margin="dense"
-                required
+        <div className={styles.main}>
+          <form onSubmit={this.handleSubmit}>
+            <p>Enter Your email and password or SignIn with google.</p>
+            <TextField
+              placeholder="Enter Your Email"
+              onChange={e => this.handleChange('email', e)}
+              label="Email"
+              type="email"
+              value={this.state.email}
+              fullWidth
+              margin="dense"
+              required
+              variant="outlined"
+              name="email"
+            />
+            <TextField
+              placeholder="Enter Your Password"
+              label="Password"
+              onChange={e => this.handleChange('password', e)}
+              defaultValue={this.state.password}
+              margin="dense"
+              type="password"
+              fullWidth
+              required
+              variant="outlined"
+            />
+            <div className="buttons">
+              <Button color="secondary" variant="outlined" type="submit">
+                SIGN IN
+              </Button>
+              <Button
+                color="primary"
+                style={{ marginLeft: '5px' }}
                 variant="outlined"
-                name="email"
-              />
-              <TextField
-                placeholder="Enter Your Password"
-                label="Password"
-                onChange={e => this.handleChange('password', e)}
-                defaultValue={this.state.password}
-                margin="dense"
-                type="password"
-                fullWidth
-                required
-                variant="outlined"
-              />
-              <div className="buttons">
-                <Button color="secondary" variant="outlined" type="submit">
-                  SIGN IN
-                </Button>
-                <Button
-                  color="primary"
-                  style={{ marginLeft: '5px' }}
-                  variant="outlined"
-                  isSignedIn
-                  onClick={signInWithGoogle}
-                >
-                  SIGN IN WITH GOOGLE
-                </Button>
-              </div>
-            </form>
-          </div>
+                isSignedIn
+                onClick={signInWithGoogle}
+              >
+                SIGN IN WITH GOOGLE
+              </Button>
+            </div>
+            <p style={{ cursor: 'pointer' }} onClick={() => this.props.setSignup(true)}>
+              <u>Not have an account?</u>
+            </p>
+          </form>
         </div>
       </MuiThemeProvider>
     );
