@@ -5,8 +5,13 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { makeStyles } from '@material-ui/core/styles';
 import Link from 'next/link';
-import { Paper } from '@material-ui/core';
-import { useState } from 'react';
+import { selectCurrentUser } from '../redux/user/user.selector';
+import { setUserState } from '../redux/user/user.actions';
+import { useEffect, useState } from 'react';
+import { createStructuredSelector } from 'reselect';
+import { connect } from 'react-redux';
+import { auth, createUserindatabase } from '../firebase/firebase-config';
+
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
@@ -49,9 +54,29 @@ const useStyles = makeStyles(theme => ({
     cursor: 'pointer',
   },
 }));
-const Navbar = () => {
+const Navbar = ({ currentUser, setUserState }) => {
+  let unsubscribeFromAuth = null;
   const classes = useStyles();
   const [menuopen, setMenuopen] = useState(false);
+  useEffect(() => {
+    unsubscribeFromAuth = auth.onAuthStateChanged(async userauth => {
+      if (userauth) {
+        const userRef = await createUserindatabase(userauth);
+
+        userRef.onSnapshot(snapshot => {
+          setUserState({
+            id: snapshot.id,
+            ...snapshot.data(),
+          });
+        });
+      }
+      setUserState(userauth);
+    });
+    return () => {
+      unsubscribeFromAuth();
+    };
+  }, [setUserState]);
+
   const steless = menuopen ? { display: 'block' } : { display: 'none' };
   return (
     <div className={classes.root}>
@@ -73,9 +98,13 @@ const Navbar = () => {
           </Button>
 
           <Button className={classes.desktopmenu} color="inherit">
-            <Link href="/signin">
-              <a>Sign In</a>
-            </Link>
+            {currentUser ? (
+              <a onClick={() => auth.signOut()}>Sign Out </a>
+            ) : (
+              <Link href="/signin">
+                <a>Sign In</a>
+              </Link>
+            )}
           </Button>
           <Button className={classes.desktopmenu} color="inherit">
             <Link href="/profile">
@@ -94,9 +123,13 @@ const Navbar = () => {
           </Button>
 
           <Button className={classes.mobilemenuitem} color="inherit">
-            <Link href="/signin">
-              <a>Sign In</a>
-            </Link>
+            {currentUser ? (
+              <p onClick={() => auth.signOut()}>Sign Out </p>
+            ) : (
+              <Link href="/signin">
+                <a>Sign In</a>
+              </Link>
+            )}
           </Button>
           <Button className={classes.mobilemenuitem} color="inherit">
             <Link href="/profile">
@@ -108,4 +141,12 @@ const Navbar = () => {
     </div>
   );
 };
-export default Navbar;
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser,
+});
+
+const mapDispatchToProps = dispatch => ({
+  setUserState: user => dispatch(setUserState(user)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);

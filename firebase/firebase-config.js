@@ -19,7 +19,7 @@ if (!firebase.apps.length) {
   firebase.app(); // if already initialized, use that one
 }
 
-export const createUserindatabase = async (userauth, firstName, lastName) => {
+export const createUserindatabase = async (userauth, fullName) => {
   if (!userauth) return;
 
   const userRef = firestore.doc(`users/${userauth.uid}`);
@@ -32,6 +32,7 @@ export const createUserindatabase = async (userauth, firstName, lastName) => {
       userRef.set({
         email,
         createdAt,
+        fullName,
       });
     } catch (error) {
       console.log(error);

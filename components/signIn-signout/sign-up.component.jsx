@@ -8,8 +8,7 @@ class Signup extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      fristName: '',
-      lastName: '',
+      fullName: '',
       email: '',
       password: '',
       confirmPassword: '',
@@ -19,24 +18,22 @@ class Signup extends Component {
   handleSubmit = async event => {
     event.preventDefault();
 
-    const { firstName, lastName, email, password, confirmPassword } = this.state;
+    const { fullName, email, password, confirmPassword } = this.state;
     if (password !== confirmPassword) {
       alert('Password did not match');
       return;
     }
     try {
       const { user } = await auth.createUserWithEmailAndPassword(email, password);
-      await createUserindatabase(user, firstName, lastName);
+      await createUserindatabase(user, fullName);
       this.setState({
-        firstName: '',
-        lastName: '',
+        fullName: '',
         email: '',
-
         password: '',
         confirmPassword: '',
       });
     } catch (error) {
-      console.log(error);
+      alert(error.message);
     }
   };
 
@@ -46,7 +43,7 @@ class Signup extends Component {
   };
 
   render() {
-    const { firstName, lastName, email, password, confirmPassword } = this.state;
+    const { fullName, email, password, confirmPassword } = this.state;
     return (
       <MuiThemeProvider>
         <div
@@ -74,22 +71,10 @@ class Signup extends Component {
 
             <form onSubmit={this.handleSubmit} className="signup-form">
               <TextField
-                placeholder="Enter Your First Name"
-                label="First Name"
-                onChange={e => this.handleChange('firstName', e)}
-                defaultValue={firstName}
-                margin="dense"
-                type="text"
-                required
-                fullWidth
-                variant="outlined"
-              />
-              <br />
-              <TextField
-                placeholder="Enter Your Last Name"
-                label="Last Name"
-                onChange={e => this.handleChange('lastName', e)}
-                defaultValue={lastName}
+                placeholder="Enter Your Full Name"
+                label="Full Name"
+                onChange={e => this.handleChange('fullName', e)}
+                defaultValue={fullName}
                 margin="dense"
                 type="text"
                 required

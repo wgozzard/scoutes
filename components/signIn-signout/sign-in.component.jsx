@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-
 import Button from '@material-ui/core/Button';
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import { auth, signInWithGoogle } from '../../firebase/firebase-config';
 import { TextField } from '@material-ui/core';
-
+import { withRouter } from 'next/router';
 class SignIn extends Component {
   constructor(props) {
     super(props);
@@ -15,11 +14,15 @@ class SignIn extends Component {
   }
 
   handleSubmit = async event => {
+    const { router } = this.props;
     event.preventDefault();
     try {
-      await auth.signInWithEmailAndPassword(this.state.email, this.state.password);
+      const loggedIn = await auth.signInWithEmailAndPassword(this.state.email, this.state.password);
+      if (loggedIn) {
+        router.push('/profile');
+      }
     } catch (error) {
-      console.log(error);
+      alert(error.message);
     }
   };
 
@@ -97,4 +100,4 @@ class SignIn extends Component {
   }
 }
 
-export default SignIn;
+export default withRouter(SignIn);
