@@ -2,7 +2,7 @@ import { makeStyles, Paper, Typography } from '@material-ui/core';
 const useStyles = makeStyles(theme => ({
   root: {
     width: '30vw',
-
+    color: 'white',
     [theme.breakpoints.down('sm')]: {
       width: '330px',
       marginBottom: 30,
@@ -23,6 +23,8 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'center',
     alignItems: 'flex-start',
     flexDirection: 'column',
+    backgroundColor: '#e60e0e',
+    color: 'white',
   },
 }));
 

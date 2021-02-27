@@ -80,7 +80,7 @@ const Navbar = ({ currentUser, setUserState }) => {
   const steless = menuopen ? { display: 'block' } : { display: 'none' };
   return (
     <div className={classes.root}>
-      <AppBar color="transparent" position="static">
+      <AppBar color="secondary" position="static">
         <Toolbar>
           <IconButton
             edge="end"

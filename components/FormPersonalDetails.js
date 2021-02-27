@@ -1,6 +1,7 @@
 import React from 'react';
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import { TextareaAutosize } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 
 function FormPersonalDetails(props) {
@@ -38,48 +39,14 @@ function FormPersonalDetails(props) {
             flexDirection: 'column',
           }}
         >
-          <TextField
-            placeholder="Enter Your School Name"
-            label="School"
-            onChange={e => handleChange('school', e)}
-            defaultValue={values.school}
-            margin="dense"
-            fullWidth
-            required
+          <TextareaAutosize
             variant="outlined"
-          />
-          <br />
-          <TextField
-            placeholder="Enter Your Grade"
-            label="Grade"
-            onChange={e => handleChange('grade', e)}
-            defaultValue={values.grade}
-            margin="dense"
-            fullWidth
             required
-            variant="outlined"
-          />
-          <br />
-          <TextField
-            placeholder="Enter Your GPA"
-            label="GPA"
-            onChange={e => handleChange('gpa', e)}
-            defaultValue={values.gpa}
-            margin="dense"
-            fullWidth
-            required
-            variant="outlined"
-          />
-          <br />
-          <TextField
-            placeholder="Enter Your SAT"
-            label="SAT"
-            onChange={e => handleChange('sat', e)}
-            defaultValue={values.sat}
-            margin="dense"
-            fullWidth
-            required
-            variant="outlined"
+            aria-label="Overview height"
+            onChange={e => handleChange('overview', e)}
+            rowsMin={4}
+            placeholder="Enter Your overviw"
+            style={{ fontSize: '1em', fontFamily: 'roboto', fontWeight: '300', padding: '10px' }}
           />
           <br />
           <TextField
@@ -94,25 +61,28 @@ function FormPersonalDetails(props) {
             fullWidth
             required
             variant="outlined"
+            color="secondary"
           />
           <br />
-          <TextField
+          <TextareaAutosize
             placeholder="Enter Your Coaches Note"
             label="Note"
             onChange={e => handleChange('coachesnote', e)}
             defaultValue={values.coachesnote}
             margin="dense"
-            fullWidth
+            rowsMin={3}
             required
             variant="outlined"
+            color="secondary"
+            style={{ fontSize: '1em', fontFamily: 'roboto', fontWeight: '300', padding: '10px' }}
           />
           <br />
           <div style={{ alignSelf: 'flex-end' }}>
-            <Button variant="outlined" color="secondary" onClick={e => back(e)}>
+            <Button color="secondary" variant="contained" onClick={e => back(e)}>
               Back
             </Button>
 
-            <Button style={{ marginLeft: '5px' }} color="primary" variant="outlined" onClick={e => continu(e)}>
+            <Button style={{ marginLeft: '5px' }} color="secondary" variant="contained" onClick={e => continu(e)}>
               Continue
             </Button>
           </div>

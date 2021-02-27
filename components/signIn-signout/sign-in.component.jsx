@@ -20,7 +20,8 @@ class SignIn extends Component {
     try {
       const loggedIn = await auth.signInWithEmailAndPassword(this.state.email, this.state.password);
       if (loggedIn) {
-        router.push('/profile');
+        console.log(loggedIn);
+        router.push(`/profile/${loggedIn.user.uid}`);
       }
     } catch (error) {
       alert(error.message);

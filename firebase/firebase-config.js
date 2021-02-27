@@ -52,16 +52,17 @@ export const saveProfile = async (uid, profileData) => {
       profileRef.set({
         createdAt,
         ...profileData,
+        youtubevideo: [],
       });
     } catch (error) {
       console.log(error);
     }
   }
-  return userRef;
+  return profileRef;
 };
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
-export const storage = firebase.storage();
+export const storageRef = firebase.storage().ref();
 
 const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ prompt: 'select_account' });

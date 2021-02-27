@@ -46,6 +46,7 @@ function FormuserSocial(props) {
             margin="dense"
             fullWidth
             variant="outlined"
+            color="secondary"
           />
           <br />
           <TextField
@@ -56,6 +57,7 @@ function FormuserSocial(props) {
             margin="dense"
             fullWidth
             variant="outlined"
+            color="secondary"
           />
           <br />
           <TextField
@@ -66,6 +68,7 @@ function FormuserSocial(props) {
             margin="dense"
             fullWidth
             variant="outlined"
+            color="secondary"
           />
           <br />
           <TextField
@@ -76,15 +79,16 @@ function FormuserSocial(props) {
             margin="dense"
             fullWidth
             variant="outlined"
+            color="secondary"
           />
           <br />
 
           <div style={{ alignSelf: 'flex-end' }}>
-            <Button color="secondary" variant="outlined" onClick={e => back(e)}>
+            <Button color="secondary" variant="contained" onClick={e => back(e)}>
               Back
             </Button>
 
-            <Button style={{ marginLeft: '5px' }} color="primary" variant="outlined" onClick={e => continu(e)}>
+            <Button style={{ marginLeft: '5px' }} color="secondary" variant="contained" onClick={e => continu(e)}>
               Continue
             </Button>
           </div>

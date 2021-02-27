@@ -3,16 +3,18 @@ import { makeStyles, Paper, Typography } from '@material-ui/core';
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
-    width: '100vw',
+    width: '100%',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
     paddingTop: 50,
-    backgroundColor: 'white',
+    paddingBottom: 50,
+    backgroundColor: '#e60e0e',
 
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
       alignItems: 'center',
       paddingTop: 30,
+      paddingBottom: 30,
     },
   },
   heading: {
@@ -21,7 +23,8 @@ const useStyles = makeStyles(theme => ({
     alignItems: 'center',
     justifyContent: 'center',
     height: '100px',
-    backgroundColor: 'white',
+    backgroundColor: '#e60e0e',
+    color: 'white',
     [theme.breakpoints.down('sm')]: {
       fontSize: '2em',
     },

@@ -1,4 +1,8 @@
 import { makeStyles, Paper } from '@material-ui/core';
+import Fab from '@material-ui/core/Fab';
+
+import EditIcon from '@material-ui/icons/Edit';
+import { useRouter } from 'next/router';
 import { connect } from 'react-redux';
 import OverviewCard from '../overViewcard/overviewCard';
 import ProfileCard from '../profileCard/profileCard';
@@ -6,12 +10,11 @@ import ProfileCard from '../profileCard/profileCard';
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
-    width: '100vw',
+    width: '100%',
     overflow: 'auto',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
 
-    backgroundColor: 'bisque',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
       alignItems: 'center',
@@ -25,24 +28,30 @@ const useStyles = makeStyles(theme => ({
   },
   paper: {
     width: '100%',
-    height: '6vh',
+    height: '10vh',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: '10px',
   },
   pp: {
-    textAlign: 'center',
+    textAlign: 'right',
+    paddingRight: 50,
   },
 }));
-const Hero = ({ user }) => {
+const Hero = ({ uid, user }) => {
   const classes = useStyles();
   const dispaly = user ? { display: 'block' } : { display: 'none' };
+  const router = useRouter();
   return (
     <div className={classes.root}>
-      <Paper className={classes.paper} style={dispaly}>
-        <p className={classes.pp}>Edit Profile</p>
-      </Paper>
+      <div className={classes.paper} style={dispaly}>
+        <p onClick={() => router.push(`/editprofile/${uid}`)} className={classes.pp}>
+          <Fab size="small" color="secondary" aria-label="edit">
+            <EditIcon />
+          </Fab>
+        </p>
+      </div>
       <ProfileCard />
       <OverviewCard />
     </div>

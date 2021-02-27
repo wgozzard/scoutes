@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Dialog from '@material-ui/core/Dialog';
-
+import Link from 'next/link';
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import { Button } from '@material-ui/core';
 
@@ -23,7 +23,13 @@ export class Success extends Component {
           <Dialog open fullWidth maxWidth="sm">
             <h1 style={{ margin: '10px' }}>Thank You For Your Submission</h1>
             <p style={{ margin: '10px' }}>You will get an email with further instructions.</p>
-            <Button variant="outlined">Close</Button>
+            <Link href={`/profile/${this.props.id}`}>
+              <a>
+                <Button color="secondary" variant="contained">
+                  Close
+                </Button>
+              </a>
+            </Link>
           </Dialog>
         </>
       </MuiThemeProvider>

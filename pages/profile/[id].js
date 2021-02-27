@@ -1,16 +1,14 @@
 import { makeStyles, Paper } from '@material-ui/core';
 
 import Hero from '../../components/hero/hero';
+import SocialCard from '../../components/socialsection/socialIcons';
 import Video from '../../components/videosection/videoSection';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    overflow: 'auto',
-    paddingTop: 15,
-    backgroundColor: 'bisque',
-    [theme.breakpoints.down('sm')]: {
-      paddingTop: 10,
-    },
+    paddingTop: 10,
+    backgroundColor: 'white',
+    [theme.breakpoints.down('sm')]: {},
   },
   media: {
     width: 200,
@@ -23,14 +21,18 @@ const useStyles = makeStyles(theme => ({
     alignItems: 'center',
   },
 }));
-const Profile = () => {
+const Profile = ({ uid }) => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <Hero />
-      <Video />
+      <Hero uid={uid} />
+      <Video uid={uid} />
+      <SocialCard />
     </div>
   );
 };
-
+Profile.getInitialProps = ({ query }) => {
+  const { id } = query;
+  return { uid: id };
+};
 export default Profile;

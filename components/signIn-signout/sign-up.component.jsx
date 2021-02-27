@@ -4,6 +4,7 @@ import { auth, createUserindatabase } from '../../firebase/firebase-config';
 import { Button, TextField } from '@material-ui/core';
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import styles from './signin.module.scss';
+import { withRouter } from 'next/router';
 
 class Signup extends Component {
   constructor(props) {
@@ -25,14 +26,13 @@ class Signup extends Component {
       return;
     }
     try {
+      const { router } = this.props;
       const { user } = await auth.createUserWithEmailAndPassword(email, password);
-      await createUserindatabase(user, fullName);
-      this.setState({
-        fullName: '',
-        email: '',
-        password: '',
-        confirmPassword: '',
-      });
+      const created = await createUserindatabase(user, fullName);
+
+      if (created) {
+        router.push(`/profile/${user.uid}`);
+      }
     } catch (error) {
       alert(error.message);
     }
@@ -111,4 +111,4 @@ class Signup extends Component {
   }
 }
 
-export default Signup;
+export default withRouter(Signup);

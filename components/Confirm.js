@@ -21,8 +21,7 @@ export function Confirm(props) {
 
   const {
     values: {
-      firstName,
-      lastName,
+      fullName,
       email,
       overview,
       school,
@@ -36,6 +35,7 @@ export function Confirm(props) {
       instagram,
       youtube,
     },
+    handleSubmit,
   } = props;
 
   return (
@@ -43,7 +43,7 @@ export function Confirm(props) {
       <div
         style={{
           width: '100%',
-          height: '150vh',
+
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
@@ -63,14 +63,9 @@ export function Confirm(props) {
         >
           <List>
             <ListItem>
-              <ListItemText primary="First Name" secondary={firstName} />
+              <ListItemText primary="Full Name" secondary={fullName} />
             </ListItem>
-            <ListItem>
-              <ListItemText primary="Last Name" secondary={lastName} />
-            </ListItem>
-            <ListItem>
-              <ListItemText primary="Email" secondary={email} />
-            </ListItem>
+
             <ListItem>
               <ListItemText primary="Overview" secondary={overview} />
             </ListItem>
@@ -107,11 +102,11 @@ export function Confirm(props) {
           </List>
           <br />
           <div>
-            <Button color="secondary" variant="outlined" onClick={e => back(e)}>
+            <Button color="secondary" variant="contained" onClick={e => back(e)}>
               Back
             </Button>
 
-            <Button style={{ marginLeft: '5px' }} color="primary" variant="outlined" onClick={e => continu(e)}>
+            <Button style={{ marginLeft: '5px' }} color="secondary" variant="contained" onClick={e => continu(e)}>
               Confirm & Continue
             </Button>
           </div>

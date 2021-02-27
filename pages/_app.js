@@ -12,6 +12,7 @@ import { Provider } from 'react-redux';
 import store from '../redux/state';
 import { PersistGate } from 'redux-persist/integration/react';
 import { persistor } from '../redux/state';
+import Footer from '../components/footer';
 
 export default function MyApp(props) {
   const { Component, pageProps } = props;
@@ -36,6 +37,7 @@ export default function MyApp(props) {
           <CssBaseline />
           <Navbar />
           <Component {...pageProps} />
+          <Footer />
         </ThemeProvider>
       </PersistGate>
     </Provider>
