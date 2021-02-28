@@ -28,51 +28,64 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const ProfileCard = () => {
+const ProfileCard = ({ profile }) => {
   const classes = useStyles();
+  const {
+    fullName,
+    school,
+    grade,
+    gpa,
+    sat,
+    profilePic,
+    Height,
+    Weight,
+    Throws,
+    Bats,
+    Birthdate,
+    Bench,
+    Squat,
+  } = profile;
   return (
     <div className={classes.root}>
       <Paper className={classes.paper} variant="outlined" elevation={4}>
-        <img className={classes.media} src="/profile.jpg" />
+        <img className={classes.media} src={profilePic} />
         <Typography variant="h4" component="h2" gutterBottom className={classes.name}>
-          Md saddam hosen
+          {fullName}
         </Typography>
 
         <Typography className={classes.meta} variant="subtitle1" component="h2" className={classes.bio}>
-          School - XYU High School
+          {`School - ${school}`}
         </Typography>
         <Typography className={classes.meta} variant="subtitle1" component="h2" className={classes.bio}>
-          Grade - Senior
+          {`Grade - ${grade}`}
         </Typography>
         <Typography className={classes.meta} variant="subtitle1" component="h2" className={classes.bio}>
-          GPA - 3.5
+          {`GPA -${gpa}`}
         </Typography>
         <Typography className={classes.meta} variant="subtitle1" component="h2" className={classes.bio}>
-          SAT - 1200
-        </Typography>
-
-        <Typography className={classes.meta} variant="subtitle1" component="h2" className={classes.bio}>
-          Height - 6'1
-        </Typography>
-        <Typography className={classes.meta} variant="subtitle1" component="h2" className={classes.bio}>
-          Weight - 195
-        </Typography>
-        <Typography className={classes.meta} variant="subtitle1" component="h2" className={classes.bio}>
-          Throws - R
-        </Typography>
-        <Typography className={classes.meta} variant="subtitle1" component="h2" className={classes.bio}>
-          Bats - R
+          {`SAT - ${sat}`}
         </Typography>
 
         <Typography className={classes.meta} variant="subtitle1" component="h2" className={classes.bio}>
-          Birthdate - 01/01/01
+          {`Height - ${Height}`}
         </Typography>
         <Typography className={classes.meta} variant="subtitle1" component="h2" className={classes.bio}>
-          Bench - 280 max
+          {`Weight - ${Weight}`}
         </Typography>
-
         <Typography className={classes.meta} variant="subtitle1" component="h2" className={classes.bio}>
-          Squat - 335 max
+          {`Throws - ${Throws}`}
+        </Typography>
+        <Typography className={classes.meta} variant="subtitle1" component="h2" className={classes.bio}>
+          {` Bats - ${Bats}`}
+        </Typography>
+        <Typography className={classes.meta} variant="subtitle1" component="h2" className={classes.bio}>
+          {`Birthdate - ${Birthdate}`}
+        </Typography>
+        <Typography className={classes.meta} variant="subtitle1" component="h2" className={classes.bio}>
+          {` Bench - ${Bench}`}
+        </Typography>
+        <Typography className={classes.meta} variant="subtitle1" component="h2" className={classes.bio}>
+          {`Squat - ${Squat}`}
         </Typography>
       </Paper>
     </div>

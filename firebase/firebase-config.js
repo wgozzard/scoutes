@@ -58,6 +58,11 @@ export const saveProfile = async (uid, profileData) => {
       console.log(error);
     }
   }
+  if (snapshot.exists) {
+    profileRef.update({
+      ...profileData,
+    });
+  }
   return profileRef;
 };
 export const auth = firebase.auth();

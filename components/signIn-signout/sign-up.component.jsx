@@ -59,7 +59,8 @@ class Signup extends Component {
               type="text"
               required
               fullWidth
-              variant="outlined"
+              variant="standard"
+              color="secondary"
             />
             <br />
             <TextField
@@ -71,7 +72,8 @@ class Signup extends Component {
               type="email"
               fullWidth
               required
-              variant="outlined"
+              variant="standard"
+              color="secondary"
             />
             <br />
             <TextField
@@ -83,7 +85,8 @@ class Signup extends Component {
               type="password"
               fullWidth
               required
-              variant="outlined"
+              variant="standard"
+              color="secondary"
             />
             <br />
             <TextField
@@ -95,10 +98,11 @@ class Signup extends Component {
               type="password"
               fullWidth
               required
-              variant="outlined"
+              variant="standard"
+              color="secondary"
             />
             <br />
-            <Button color="primary" variant="outlined" type="submit">
+            <Button color="secondary" variant="contained" type="submit">
               SIGN UP
             </Button>
             <p style={{ cursor: 'pointer' }} onClick={() => this.props.setSignup(false)}>

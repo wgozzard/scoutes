@@ -39,7 +39,7 @@ const useStyles = makeStyles(theme => ({
     paddingRight: 50,
   },
 }));
-const Hero = ({ uid, user }) => {
+const Hero = ({ uid, user, profile }) => {
   const classes = useStyles();
   const dispaly = user ? { display: 'block' } : { display: 'none' };
   const router = useRouter();
@@ -52,8 +52,8 @@ const Hero = ({ uid, user }) => {
           </Fab>
         </p>
       </div>
-      <ProfileCard />
-      <OverviewCard />
+      <ProfileCard profile={profile} />
+      <OverviewCard profile={profile} />
     </div>
   );
 };

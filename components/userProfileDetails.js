@@ -1,9 +1,10 @@
 import React from 'react';
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+
 import Button from '@material-ui/core/Button';
 
-function FormuserSocial(props) {
+function FormProfileDetails(props) {
   const continu = e => {
     e.preventDefault();
     props.nextStep();
@@ -39,50 +40,83 @@ function FormuserSocial(props) {
           }}
         >
           <TextField
-            placeholder="Enter Your Facebook Profile Link (Skipable)"
-            label="Facebook"
-            onChange={e => handleChange('facebook', e)}
-            value={values.facebook}
-            margin="dense"
+            placeholder="6'1"
+            label="Height"
+            onChange={e => handleChange('Height', e)}
+            value={values.Height}
             fullWidth
+            required
             variant="standard"
             color="secondary"
           />
           <br />
           <TextField
-            placeholder="Enter Your Tweeter Profile Link (Skipable)"
-            label="Tweeter"
-            onChange={e => handleChange('tweeter', e)}
-            value={values.tweeter}
-            margin="dense"
+            placeholder="0"
+            label="Weight"
+            onChange={e => handleChange('Weight', e)}
+            value={values.Weight}
             fullWidth
+            required
             variant="standard"
             color="secondary"
           />
           <br />
           <TextField
-            placeholder="Enter Your Instagram Profile Link (Skipable)"
-            label="Instagram"
-            onChange={e => handleChange('instagram', e)}
-            value={values.instagram}
-            margin="dense"
+            placeholder="R"
+            label="Throws"
+            onChange={e => handleChange('Throws', e)}
+            value={values.Trows}
             fullWidth
+            required
             variant="standard"
             color="secondary"
           />
           <br />
           <TextField
-            placeholder="Enter Your Youtube chanel Link (Skipable)"
-            label="Youtube"
-            onChange={e => handleChange('youtube', e)}
-            value={values.youtube}
-            margin="dense"
+            placeholder="R"
+            label="Bats"
+            onChange={e => handleChange('Bats', e)}
+            value={values.Bats}
             fullWidth
+            required
             variant="standard"
             color="secondary"
           />
           <br />
-
+          <TextField
+            placeholder="28-Feb-2000"
+            label="Birthdate"
+            onChange={e => handleChange('Birthdate', e)}
+            value={values.Birthdate}
+            fullWidth
+            required
+            variant="standard"
+            color="secondary"
+            type="date"
+          />
+          <br />
+          <TextField
+            placeholder="280 max"
+            label="Bench"
+            onChange={e => handleChange('Bench', e)}
+            value={values.Bench}
+            fullWidth
+            required
+            variant="standard"
+            color="secondary"
+          />
+          <br />
+          <TextField
+            placeholder="335 max"
+            label="Squat"
+            onChange={e => handleChange('Squat', e)}
+            value={values.Squat}
+            fullWidth
+            required
+            variant="standard"
+            color="secondary"
+          />
+          <br />
           <div style={{ alignSelf: 'flex-end' }}>
             <Button color="secondary" variant="contained" onClick={e => back(e)}>
               Back
@@ -97,4 +131,5 @@ function FormuserSocial(props) {
     </MuiThemeProvider>
   );
 }
-export default FormuserSocial;
+
+export default FormProfileDetails;

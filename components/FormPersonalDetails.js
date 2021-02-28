@@ -1,7 +1,7 @@
 import React from 'react';
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-import { TextareaAutosize } from '@material-ui/core';
+import { FormLabel, TextareaAutosize } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 
 function FormPersonalDetails(props) {
@@ -39,9 +39,11 @@ function FormPersonalDetails(props) {
             flexDirection: 'column',
           }}
         >
+          <FormLabel component="legend">Overview</FormLabel>
           <TextareaAutosize
-            variant="outlined"
+            variant="standard"
             required
+            value={values.overview}
             aria-label="Overview height"
             onChange={e => handleChange('overview', e)}
             rowsMin={4}
@@ -56,23 +58,50 @@ function FormPersonalDetails(props) {
             3B - 5,HR - 12"
             label="Stats"
             onChange={e => handleChange('stats', e)}
-            defaultValue={values.stats}
+            value={values.stats}
             margin="dense"
             fullWidth
             required
-            variant="outlined"
+            variant="standard"
             color="secondary"
           />
           <br />
+          <TextField
+            placeholder="Your contact email"
+            label="Email"
+            onChange={e => handleChange('email', e)}
+            value={values.email}
+            margin="dense"
+            fullWidth
+            required
+            type="email"
+            variant="standard"
+            color="secondary"
+          />
+          <br />{' '}
+          <TextField
+            placeholder="Your Phone number"
+            label="Phone"
+            onChange={e => handleChange('phone', e)}
+            value={values.phone}
+            margin="dense"
+            fullWidth
+            required
+            type="tel"
+            variant="standard"
+            color="secondary"
+          />
+          <br />
+          <FormLabel component="legend">Coaches Note</FormLabel>
           <TextareaAutosize
             placeholder="Enter Your Coaches Note"
             label="Note"
             onChange={e => handleChange('coachesnote', e)}
-            defaultValue={values.coachesnote}
+            value={values.coachesnote}
             margin="dense"
             rowsMin={3}
             required
-            variant="outlined"
+            variant="standard"
             color="secondary"
             style={{ fontSize: '1em', fontFamily: 'roboto', fontWeight: '300', padding: '10px' }}
           />

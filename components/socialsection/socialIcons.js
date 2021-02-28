@@ -2,8 +2,10 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import YouTubeIcon from '@material-ui/icons/YouTube';
+import Link from 'next/link';
 
-const SocialCard = () => {
+const SocialCard = props => {
+  const { facebook, tweeter, instagram, youtube } = props.profile;
   return (
     <div
       style={{
@@ -19,10 +21,34 @@ const SocialCard = () => {
     >
       <h1>jhon Smiths social media</h1>
       <div>
-        <FacebookIcon color="primary" />
-        <TwitterIcon style={{ color: 'rgb(29, 161, 242)' }} />
-        <InstagramIcon style={{ color: 'rgb(225, 48, 108)' }} />
-        <YouTubeIcon color="secondary" />
+        {facebook && (
+          <Link href={facebook}>
+            <a>
+              <FacebookIcon fontSize="large" style={{ margin: 10 }} color="primary" />
+            </a>
+          </Link>
+        )}
+        {tweeter && (
+          <Link href={tweeter}>
+            <a>
+              <TwitterIcon fontSize="large" style={{ color: 'rgb(29, 161, 242)', margin: 10 }} />
+            </a>
+          </Link>
+        )}
+        {instagram && (
+          <Link href={instagram}>
+            <a>
+              <InstagramIcon fontSize="large" style={{ color: 'rgb(225, 48, 108)', margin: 10 }} />
+            </a>
+          </Link>
+        )}
+        {youtube && (
+          <Link href={youtube}>
+            <a>
+              <YouTubeIcon fontSize="large" style={{ margin: 10 }} color="secondary" />
+            </a>
+          </Link>
+        )}
       </div>
     </div>
   );

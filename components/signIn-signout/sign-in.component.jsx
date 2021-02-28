@@ -48,7 +48,8 @@ class SignIn extends Component {
               fullWidth
               margin="dense"
               required
-              variant="outlined"
+              variant="standard"
+              color="secondary"
               name="email"
             />
             <TextField
@@ -60,16 +61,17 @@ class SignIn extends Component {
               type="password"
               fullWidth
               required
-              variant="outlined"
+              variant="standard"
+              color="secondary"
             />
             <div className="buttons">
-              <Button color="secondary" variant="outlined" type="submit">
+              <Button color="secondary" variant="contained" type="submit">
                 SIGN IN
               </Button>
               <Button
-                color="primary"
+                color="secondary"
                 style={{ marginLeft: '5px' }}
-                variant="outlined"
+                variant="contained"
                 isSignedIn
                 onClick={signInWithGoogle}
               >

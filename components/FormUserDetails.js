@@ -47,7 +47,7 @@ const useStyles = makeStyles(theme => ({
 function FormUserDetails(props) {
   const classes = useStyles();
   const [UserImage, setUserImage] = useState();
-  const [selectedFile, setSelectedFile] = useState();
+  const [selectedFile, setSelectedFile] = useState(props.values.profilePic);
   const [uploadProgres, setUploadProgres] = useState();
   const imageRef = useRef();
   const onButtonClick = () => {
@@ -55,8 +55,11 @@ function FormUserDetails(props) {
   };
   const handleChang = event => {
     const file = event.target.files[0];
-    console.log(file.name);
-    setSelectedFile(file);
+    if (file.size <= 100000) {
+      setSelectedFile(file);
+    } else {
+      alert('Image size must be 100kb or less  ');
+    }
   };
   const continu = e => {
     e.preventDefault();
@@ -69,13 +72,18 @@ function FormUserDetails(props) {
       return () => URL.revokeObjectURL(objectURL);
     }
   }, [selectedFile]);
-  const handleupload = () => {
+  const handleupload = async () => {
     const imageReff = storageRef.child(`photos/${props.uid}`);
-    const uploadTask = imageReff.put(selectedFile).on(
+    const uploadTask = await imageReff.put(selectedFile).on(
       'state_changed',
       function (snapshot) {
         const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         setUploadProgres(progress);
+        if (progress === 100) {
+          const url = imageReff.getDownloadURL().then(url => {
+            props.handleurl(url);
+          });
+        }
       },
       error => alert({ error: error.message }),
     );
@@ -97,7 +105,7 @@ function FormUserDetails(props) {
         }}
       >
         <div>
-          <div>Imgage should be 200x200</div>
+          <p style={{ textAlign: 'center' }}>Image must be 1:1 and max 100kb</p>
           {selectedFile ? (
             <>
               {uploadProgres ? (
@@ -140,11 +148,11 @@ function FormUserDetails(props) {
             placeholder="Enter Your Full Name"
             label="Full Name"
             onChange={e => handleChange('fullName', e)}
-            defaultValue={values.fullName}
+            value={values.fullName}
             margin="dense"
             fullWidth
             required
-            variant="outlined"
+            variant="standard"
             color="secondary"
           />
           <br />
@@ -152,11 +160,11 @@ function FormUserDetails(props) {
             placeholder="Enter Your School Name"
             label="School"
             onChange={e => handleChange('school', e)}
-            defaultValue={values.school}
+            value={values.school}
             margin="dense"
             fullWidth
             required
-            variant="outlined"
+            variant="standard"
             color="secondary"
           />
           <br />
@@ -164,11 +172,11 @@ function FormUserDetails(props) {
             placeholder="Enter Your Grade"
             label="Grade"
             onChange={e => handleChange('grade', e)}
-            defaultValue={values.grade}
+            value={values.grade}
             margin="dense"
             fullWidth
             required
-            variant="outlined"
+            variant="standard"
             color="secondary"
           />
           <br />
@@ -176,11 +184,11 @@ function FormUserDetails(props) {
             placeholder="Enter Your GPA"
             label="GPA"
             onChange={e => handleChange('gpa', e)}
-            defaultValue={values.gpa}
+            value={values.gpa}
             margin="dense"
             fullWidth
             required
-            variant="outlined"
+            variant="standard"
             color="secondary"
           />
           <br />
@@ -188,11 +196,11 @@ function FormUserDetails(props) {
             placeholder="Enter Your SAT"
             label="SAT"
             onChange={e => handleChange('sat', e)}
-            defaultValue={values.sat}
+            value={values.sat}
             margin="dense"
             fullWidth
             required
-            variant="outlined"
+            variant="standard"
             color="secondary"
           />
 
