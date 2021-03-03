@@ -11,15 +11,15 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
     minHeight: 500,
     flexWrap: 'wrap',
-    paddingTop: 50,
-    paddingBottom: 50,
+
+    justifyContent: 'space-between',
+    padding: '2vw 5vw',
     backgroundColor: '#e60e0e',
 
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
       alignItems: 'center',
-      paddingTop: 30,
-      paddingBottom: 30,
+      padding: '2vw',
     },
   },
   heading: {
@@ -35,10 +35,11 @@ const useStyles = makeStyles(theme => ({
     },
   },
   media: {
-    margin: '20px auto',
     width: 560,
     height: 315,
     backgroundColor: 'white',
+    borderRadius: '5px',
+    marginTop: 50,
     [theme.breakpoints.down('sm')]: {
       width: 330,
       height: 185,
@@ -52,8 +53,7 @@ const useStyles = makeStyles(theme => ({
     alignItems: 'center',
     backgroundColor: 'white',
     borderRadius: '5px',
-    margin: '20px auto',
-
+    marginTop: 50,
     [theme.breakpoints.down('sm')]: {
       width: 330,
       height: 185,
@@ -163,10 +163,27 @@ const Videos = ({ profile, uid, user }) => {
                       <Button onClick={() => handleSave()} color="secondary" variant="contained">
                         Save
                       </Button>
+                      <Button
+                        style={{ marginLeft: 10 }}
+                        onClick={() => handleClose()}
+                        color="secondary"
+                        variant="contained"
+                      >
+                        cancel
+                      </Button>
                     </div>
                   </div>
                 ) : (
-                  <div onClick={() => handleOpen()}>
+                  <div
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      flexDirection: 'column-reverse',
+                    }}
+                    onClick={() => handleOpen()}
+                  >
+                    <h2>Add a video</h2>
                     <AddCircle fontSize="large" color="secondary" />
                   </div>
                 )}
