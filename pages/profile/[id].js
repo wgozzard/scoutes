@@ -5,10 +5,13 @@ import SocialCard from '../../components/socialsection/socialIcons';
 import Video from '../../components/videosection/videoSection';
 import { firestore } from '../../firebase/firebase-config';
 import Link from 'next/link';
+import { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { setUserProfile } from '../../redux/user/user.actions';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    paddingTop: 10,
+    paddingTop: 30,
     backgroundColor: 'white',
     [theme.breakpoints.down('sm')]: {},
   },
@@ -31,8 +34,13 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'column',
   },
 }));
-const Profile = ({ uid, profile }) => {
+const Profile = ({ uid, user, profile }) => {
   const classes = useStyles();
+  useEffect(() => {
+    if (user) {
+      setUserProfile(profile);
+    }
+  }, []);
   return (
     <div className={classes.root}>
       {profile ? (
@@ -68,4 +76,10 @@ Profile.getInitialProps = async ({ query }) => {
   }
   return { uid: id, profile: profile };
 };
-export default Profile;
+const mapStateToProps = state => {
+  return {
+    user: state.user.currentUser,
+  };
+};
+
+export default connect(mapStateToProps)(Profile);
