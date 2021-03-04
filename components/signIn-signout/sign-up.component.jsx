@@ -49,7 +49,7 @@ class Signup extends Component {
       <MuiThemeProvider>
         <div className={styles.main}>
           <form onSubmit={this.handleSubmit} className="signup-form">
-            <p>or Sign Up with your information ! </p>
+            <p>Sign Up with your information ! </p>
             <TextField
               placeholder="Enter Your Full Name"
               label="Full Name"

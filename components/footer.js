@@ -5,6 +5,7 @@ const Footer = () => {
         backgroundColor: '#e60e0e',
         color: 'white',
         paddingTop: 50,
+        borderTop: '1px solid white',
       }}
     >
       <p

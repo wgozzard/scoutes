@@ -31,6 +31,9 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: 'white',
     color: 'red',
     boxShadow: '0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%)',
+    [theme.breakpoints.down('sm')]: {
+      left: '61%',
+    },
   },
   mobilemenuitem: {
     width: '100%',
@@ -54,9 +57,14 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: '0 50px',
+    [theme.breakpoints.down('sm')]: {
+      padding: '0 20px',
+    },
   },
   logo: {
-    width: '100%',
+    [theme.breakpoints.down('sm')]: {
+      width: '60%',
+    },
   },
 }));
 const Navbar = ({ currentUser, profile, setUserState, setUserProfile }) => {
@@ -98,13 +106,15 @@ const Navbar = ({ currentUser, profile, setUserState, setUserProfile }) => {
   const pic = profile ? profile.profilePic : null;
   return (
     <div className={classes.root}>
-      <AppBar color="secondary" position="static">
+      <AppBar color="secondary" position="fixed">
         <div className={classes.menu}>
-          <Link href="/">
-            <a>
-              <img style={{ width: '100%' }} src="/logo-white.svg" />
-            </a>
-          </Link>
+          <div className={classes.logo}>
+            <Link href="/">
+              <a>
+                <img style={{ width: '100%' }} src="/logo-white.svg" />
+              </a>
+            </Link>
+          </div>
 
           <IconButton onClick={() => setMenuopen(!menuopen)}>
             <Avatar src={pic} />

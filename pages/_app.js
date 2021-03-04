@@ -36,6 +36,7 @@ export default function MyApp(props) {
           {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
           <CssBaseline />
           <Navbar />
+          <div style={{ width: '100%', height: '8vh' }}></div>
           <Component {...pageProps} />
           <Footer />
         </ThemeProvider>
