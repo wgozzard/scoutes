@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 const Footer = () => {
   return (
     <footer
@@ -25,7 +27,11 @@ const Footer = () => {
           marginTop: 20,
         }}
       >
-        <h4>Privacy policy</h4>
+        <Link href="https://www.freeprivacypolicy.com/live/93294b3b-7ac4-41b5-8e7f-82b9e40477be">
+          <a>
+            <h4>Privacy policy</h4>
+          </a>
+        </Link>
         <span> - </span>
         <h4>Terms and Conditions</h4>
       </div>
