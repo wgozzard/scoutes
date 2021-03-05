@@ -1,12 +1,32 @@
-import React, { Component } from 'react';
-import Dialog from '@material-ui/core/Dialog';
-import AppBar from '@material-ui/core/AppBar';
-import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
+import React from 'react';
+import { makeStyles, ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import { List, ListItem, ListItemText } from '@material-ui/core/';
 import Button from '@material-ui/core/Button';
 import { saveProfile } from '../firebase/firebase-config';
-
+const useStyles = makeStyles(theme => ({
+  root: {
+    width: '100%',
+    minHeight: '100vh',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    fontSize: '1.3em',
+    fontFamily: 'roboto',
+    fontWeight: '300',
+  },
+  formcontainer: {
+    width: '40vw',
+    minHeight: '90vh',
+    padding: '20px',
+    display: 'flex',
+    flexDirection: 'column',
+    [theme.breakpoints.down('sm')]: {
+      width: '90vw',
+    },
+  },
+}));
 export function Confirm(props) {
+  const classes = useStyles();
   const continu = e => {
     e.preventDefault();
     // PROCESS FORM //
@@ -41,27 +61,8 @@ export function Confirm(props) {
 
   return (
     <MuiThemeProvider>
-      <div
-        style={{
-          width: '100%',
-
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          fontSize: '1.3em',
-          fontFamily: 'roboto',
-          fontWeight: '300',
-        }}
-      >
-        <div
-          style={{
-            width: '40vw',
-
-            padding: '20px',
-            display: 'flex',
-            flexDirection: 'column',
-          }}
-        >
+      <div className={classes.root}>
+        <div className={classes.formcontainer}>
           <List>
             <ListItem>
               <ListItemText primary="Full Name" secondary={fullName} />

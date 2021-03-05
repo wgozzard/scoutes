@@ -24,8 +24,8 @@ export class Success extends Component {
             <h1 style={{ margin: '10px' }}>Thank You For Your Submission</h1>
             <p style={{ margin: '10px' }}>You will get an email with further instructions.</p>
             <Link href={`/profile/${this.props.id}`}>
-              <a>
-                <Button color="secondary" variant="contained">
+              <a style={{ width: 80, margin: '0 auto' }}>
+                <Button s color="secondary" variant="contained">
                   Close
                 </Button>
               </a>

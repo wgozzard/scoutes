@@ -1,9 +1,33 @@
 import React from 'react';
-import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
+import { makeStyles, ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
+const useStyles = makeStyles(theme => ({
+  root: {
+    width: '100%',
+    minHeight: '100vh',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    fontSize: '1.3em',
+    fontFamily: 'roboto',
+    fontWeight: '300',
+  },
+  formcontainer: {
+    width: '40vw',
+    minHeight: '90vh',
+    padding: '20px',
+    display: 'flex',
+    flexDirection: 'column',
+    [theme.breakpoints.down('sm')]: {
+      width: '90vw',
+    },
+  },
+}));
+
 function FormuserSocial(props) {
+  const classes = useStyles();
   const continu = e => {
     e.preventDefault();
     props.nextStep();
@@ -17,27 +41,8 @@ function FormuserSocial(props) {
   const { values, handleChange } = props;
   return (
     <MuiThemeProvider>
-      <div
-        style={{
-          width: '100%',
-          height: '100vh',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          fontSize: '1.3em',
-          fontFamily: 'roboto',
-          fontWeight: '300',
-        }}
-      >
-        <form
-          style={{
-            width: '40vw',
-            height: '90vh',
-            padding: '20px',
-            display: 'flex',
-            flexDirection: 'column',
-          }}
-        >
+      <div className={classes.root}>
+        <form className={classes.formcontainer}>
           <TextField
             placeholder="Enter Your Facebook Profile Link (Skipable)"
             label="Facebook"
