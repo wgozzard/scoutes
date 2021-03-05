@@ -50,8 +50,8 @@ function FormuserSocial(props) {
           />
           <br />
           <TextField
-            placeholder="Enter Your Tweeter Profile Link (Skipable)"
-            label="Tweeter"
+            placeholder="Enter Your Twitter Profile Link (Skipable)"
+            label="Twitter"
             onChange={e => handleChange('tweeter', e)}
             value={values.tweeter}
             margin="dense"

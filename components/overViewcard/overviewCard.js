@@ -44,9 +44,11 @@ const OverviewCard = ({ profile }) => {
         <Typography gutterBottom className={classes.meta} variant="subtitle1" component="h2">
           {` Email: ${email}`}
         </Typography>
-        <Typography gutterBottom className={classes.meta} variant="subtitle1" component="h2">
-          {`Phone: ${phone}`}
-        </Typography>
+        {phone.length > 0 && (
+          <Typography gutterBottom className={classes.meta} variant="subtitle1" component="h2">
+            {`Phone: ${phone}`}
+          </Typography>
+        )}
 
         <Typography variant="h5" gutterBottom component="h2" className={classes.heading}>
           STATS:

@@ -28,6 +28,7 @@ export function Confirm(props) {
       grade,
       gpa,
       sat,
+      Bench,
       coachesnote,
       stats,
       facebook,
@@ -82,6 +83,9 @@ export function Confirm(props) {
               <ListItemText primary="SAT" secondary={sat} />
             </ListItem>
             <ListItem>
+              <ListItemText primary="ETC" secondary={Bench} />
+            </ListItem>
+            <ListItem>
               <ListItemText primary="Coaches note" secondary={coachesnote} />
             </ListItem>
             <ListItem>
@@ -91,7 +95,7 @@ export function Confirm(props) {
               <ListItemText primary="Facebook" secondary={facebook} />
             </ListItem>
             <ListItem>
-              <ListItemText primary="Tweeter" secondary={tweeter} />
+              <ListItemText primary="Twitter" secondary={tweeter} />
             </ListItem>
             <ListItem>
               <ListItemText primary="Instagram" secondary={instagram} />

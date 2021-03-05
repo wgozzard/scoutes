@@ -59,12 +59,16 @@ const ProfileCard = ({ profile }) => {
         <Typography className={classes.meta} variant="subtitle1" component="h2" className={classes.bio}>
           {`Grade - ${grade}`}
         </Typography>
-        <Typography className={classes.meta} variant="subtitle1" component="h2" className={classes.bio}>
-          {`GPA -${gpa}`}
-        </Typography>
-        <Typography className={classes.meta} variant="subtitle1" component="h2" className={classes.bio}>
-          {`SAT - ${sat}`}
-        </Typography>
+        {gpa.length > 0 && (
+          <Typography className={classes.meta} variant="subtitle1" component="h2" className={classes.bio}>
+            {`GPA -${gpa}`}
+          </Typography>
+        )}
+        {sat.length > 0 && (
+          <Typography className={classes.meta} variant="subtitle1" component="h2" className={classes.bio}>
+            {`SAT - ${sat}`}
+          </Typography>
+        )}
 
         <Typography className={classes.meta} variant="subtitle1" component="h2" className={classes.bio}>
           {`Height - ${Height}`}
@@ -73,19 +77,13 @@ const ProfileCard = ({ profile }) => {
           {`Weight - ${Weight}`}
         </Typography>
         <Typography className={classes.meta} variant="subtitle1" component="h2" className={classes.bio}>
-          {`Throws - ${Throws}`}
-        </Typography>
-        <Typography className={classes.meta} variant="subtitle1" component="h2" className={classes.bio}>
-          {` Bats - ${Bats}`}
+          {`Right/Left hand - ${Throws}`}
         </Typography>
         <Typography className={classes.meta} variant="subtitle1" component="h2" className={classes.bio}>
           {`Birthdate - ${Birthdate}`}
         </Typography>
         <Typography className={classes.meta} variant="subtitle1" component="h2" className={classes.bio}>
-          {` Bench - ${Bench}`}
-        </Typography>
-        <Typography className={classes.meta} variant="subtitle1" component="h2" className={classes.bio}>
-          {`Squat - ${Squat}`}
+          {Bench}
         </Typography>
       </Paper>
     </div>

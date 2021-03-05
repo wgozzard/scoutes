@@ -91,7 +91,6 @@ export class UserForm extends Component {
       Bats,
       Birthdate,
       Bench,
-      Squat,
       email,
       phone,
       overview,
@@ -128,7 +127,7 @@ export class UserForm extends Component {
       Bats,
       Birthdate,
       Bench,
-      Squat,
+
       school,
       grade,
       gpa,
@@ -152,7 +151,7 @@ export class UserForm extends Component {
       Bats,
       Birthdate,
       Bench,
-      Squat,
+
       email,
       phone,
       overview,
