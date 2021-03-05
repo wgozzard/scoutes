@@ -4,10 +4,10 @@ import Link from 'next/link';
 import { connect } from 'react-redux';
 import { firestore } from '../../firebase/firebase-config';
 const App = ({ uid, user }) => {
-  if (uid === null) {
+  if (uid === null || user === null) {
     return (
       <div style={{ width: '100%', height: '80vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        this account does not exists
+        this account does not exists or you are not logged in.
       </div>
     );
   }
