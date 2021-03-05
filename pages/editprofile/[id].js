@@ -3,9 +3,12 @@ import { UserForm } from '../../components/UserForm';
 import Link from 'next/link';
 import { connect } from 'react-redux';
 const App = ({ uid, user }) => {
+  if (user._id !== uid) {
+    return <div>You are not the owner of this account</div>;
+  }
   return (
     <div className="App">
-      {user ? (
+      {user && user._id === uid ? (
         <UserForm uid={uid} />
       ) : (
         <div style={{ width: '100%', height: '80vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>

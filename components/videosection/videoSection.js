@@ -128,7 +128,9 @@ const Videos = ({ profile, uid, user }) => {
           ? profile.youtubevideo.map((video, i) => {
               return (
                 <div key={i} className={classes.media}>
-                  {user && <Delete onClick={() => handleDelete(video)} className={classes.delete} fontSize="default" />}
+                  {user && user._id === uid && (
+                    <Delete onClick={() => handleDelete(video)} className={classes.delete} fontSize="default" />
+                  )}
                   <iframe
                     width="100%"
                     height="100%"
@@ -141,7 +143,7 @@ const Videos = ({ profile, uid, user }) => {
               );
             })
           : !user && <h1>No Videos To Show</h1>}
-        {user && (
+        {user && user._id === uid && (
           <>
             {profile.youtubevideo.length <= 5 && (
               <div className={classes.addvideo}>

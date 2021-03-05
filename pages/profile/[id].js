@@ -46,7 +46,7 @@ const Profile = ({ uid, user, profile }) => {
       {profile ? (
         <>
           <Hero profile={profile} uid={uid} />
-          <Video profile={profile} uid={uid} />
+          <Video user={user} profile={profile} uid={uid} />
           <SocialCard profile={profile} />
         </>
       ) : (
