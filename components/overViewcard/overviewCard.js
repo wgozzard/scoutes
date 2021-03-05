@@ -31,12 +31,17 @@ const OverviewCard = ({ profile }) => {
         <Typography gutterBottom className={classes.meta} variant="subtitle1" component="h2">
           {overview}
         </Typography>
-        <Typography variant="h5" gutterBottom component="h2" className={classes.heading}>
-          Coaches Note:
-        </Typography>
-        <Typography gutterBottom className={classes.meta} variant="subtitle1" component="h2">
-          {coachesnote}
-        </Typography>
+        {coachesnote.length > 0 && (
+          <>
+            <Typography variant="h5" gutterBottom component="h2" className={classes.heading}>
+              Coaches Note:
+            </Typography>
+
+            <Typography gutterBottom className={classes.meta} variant="subtitle1" component="h2">
+              {coachesnote}
+            </Typography>
+          </>
+        )}
 
         <Typography variant="h5" gutterBottom component="h2" className={classes.heading}>
           Stats:
@@ -47,9 +52,11 @@ const OverviewCard = ({ profile }) => {
         <Typography variant="h5" gutterBottom component="h2" className={classes.heading}>
           Other Stats:
         </Typography>
-        <Typography className={classes.meta} variant="subtitle1" component="h2" className={classes.bio}>
-          {Bench}
-        </Typography>
+        {Bench.length > 0 && (
+          <Typography className={classes.meta} variant="subtitle1" component="h2" className={classes.bio}>
+            {Bench}
+          </Typography>
+        )}
       </Paper>
     </div>
   );

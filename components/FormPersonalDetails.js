@@ -97,13 +97,12 @@ const FormPersonalDetails = props => {
           <br />
           <FormLabel component="legend">Coaches Note</FormLabel>
           <TextareaAutosize
-            placeholder="Enter Your Coaches Note"
+            placeholder=" Enter Your Coaches Note or leave blank if not available"
             label="Note"
             onChange={e => handleChange('coachesnote', e)}
             value={values.coachesnote}
             margin="dense"
-            rowsMin={3}
-            required
+            rowsMin={4}
             variant="standard"
             color="secondary"
             style={{ fontSize: '1em', fontFamily: 'roboto', fontWeight: '300', padding: '10px' }}
