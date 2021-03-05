@@ -21,7 +21,7 @@ const useStyles = makeStyles(theme => ({
 
 const OverviewCard = ({ profile }) => {
   const classes = useStyles();
-  const { phone, email, overview, coachesnote, stats } = profile;
+  const { Bench, overview, coachesnote, stats } = profile;
   return (
     <div className={classes.root}>
       <Paper className={classes.paper} variant="outlined" elevation={4}>
@@ -39,22 +39,16 @@ const OverviewCard = ({ profile }) => {
         </Typography>
 
         <Typography variant="h5" gutterBottom component="h2" className={classes.heading}>
-          Contact Info:
-        </Typography>
-        <Typography gutterBottom className={classes.meta} variant="subtitle1" component="h2">
-          {` Email: ${email}`}
-        </Typography>
-        {phone.length > 0 && (
-          <Typography gutterBottom className={classes.meta} variant="subtitle1" component="h2">
-            {`Phone: ${phone}`}
-          </Typography>
-        )}
-
-        <Typography variant="h5" gutterBottom component="h2" className={classes.heading}>
-          STATS:
+          Stats:
         </Typography>
         <Typography gutterBottom className={classes.meta} variant="subtitle1" component="h2">
           {stats}
+        </Typography>
+        <Typography variant="h5" gutterBottom component="h2" className={classes.heading}>
+          Other Stats:
+        </Typography>
+        <Typography className={classes.meta} variant="subtitle1" component="h2" className={classes.bio}>
+          {Bench}
         </Typography>
       </Paper>
     </div>

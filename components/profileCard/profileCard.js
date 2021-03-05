@@ -30,21 +30,7 @@ const useStyles = makeStyles(theme => ({
 
 const ProfileCard = ({ profile }) => {
   const classes = useStyles();
-  const {
-    fullName,
-    school,
-    grade,
-    gpa,
-    sat,
-    profilePic,
-    Height,
-    Weight,
-    Throws,
-    Bats,
-    Birthdate,
-    Bench,
-    Squat,
-  } = profile;
+  const { fullName, school, grade, gpa, sat, profilePic, Height, Weight, Throws, phone, email, Birthdate } = profile;
   return (
     <div className={classes.root}>
       <Paper className={classes.paper} variant="outlined" elevation={4}>
@@ -77,14 +63,19 @@ const ProfileCard = ({ profile }) => {
           {`Weight - ${Weight}`}
         </Typography>
         <Typography className={classes.meta} variant="subtitle1" component="h2" className={classes.bio}>
-          {`Right/Left hand - ${Throws}`}
+          {`Right/Left - ${Throws}`}
         </Typography>
         <Typography className={classes.meta} variant="subtitle1" component="h2" className={classes.bio}>
           {`Birthdate - ${Birthdate}`}
         </Typography>
-        <Typography className={classes.meta} variant="subtitle1" component="h2" className={classes.bio}>
-          {Bench}
+        <Typography gutterBottom className={classes.meta} variant="subtitle1" component="h2">
+          {` Email: ${email}`}
         </Typography>
+        {phone.length > 0 && (
+          <Typography gutterBottom className={classes.meta} variant="subtitle1" component="h2">
+            {`Phone: ${phone}`}
+          </Typography>
+        )}
       </Paper>
     </div>
   );

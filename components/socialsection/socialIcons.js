@@ -5,7 +5,7 @@ import YouTubeIcon from '@material-ui/icons/YouTube';
 import Link from 'next/link';
 
 const SocialCard = props => {
-  const { facebook, tweeter, instagram, youtube } = props.profile;
+  const { fullName, facebook, tweeter, instagram, youtube } = props.profile;
   return (
     <div
       style={{
@@ -19,7 +19,7 @@ const SocialCard = props => {
         marginBottom: 30,
       }}
     >
-      <h1>jhon Smiths social media</h1>
+      <h1>{`${fullName}'s social media`}</h1>
       <div>
         {facebook && (
           <Link href={facebook}>

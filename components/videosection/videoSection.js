@@ -121,7 +121,7 @@ const Videos = ({ profile, uid, user }) => {
   return (
     <>
       <Typography variant="h3" gutterBottom component="div" className={classes.heading}>
-        JOHN SMITH VIDEOS
+        {`${profile.fullName}'s Videos`}
       </Typography>
       <div className={classes.root}>
         {profile.youtubevideo.length

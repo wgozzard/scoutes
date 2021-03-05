@@ -50,11 +50,7 @@ const useStyles = makeStyles(theme => ({
       fontSize: '2em',
     },
   },
-  subheading: {
-    [theme.breakpoints.down('sm')]: {
-      fontSize: '1em',
-    },
-  },
+
   button: {
     marginTop: 30,
     fontSize: '2em',
@@ -73,9 +69,6 @@ export default function Home() {
       </Head>
 
       <div className={classes.main2}>
-        <Typography className={classes.subheading} align="center" color="textPrimary" variant="h4" gutterBottom>
-          WHY SCOUTSPROFILE?
-        </Typography>
         <Typography className={classes.heading} align="center" variant="h2" gutterBottom>
           Simplify Submissions to
           <br /> College Coaches and
