@@ -35,6 +35,13 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 const Profile = ({ uid, user, profile }) => {
+  if (uid === null) {
+    return (
+      <div style={{ width: '100%', height: '80vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        this account does not exists
+      </div>
+    );
+  }
   const classes = useStyles();
   useEffect(() => {
     if (user) {
@@ -70,11 +77,13 @@ Profile.getInitialProps = async ({ query }) => {
   const snapshot = await profileRef.get();
 
   let profile;
+  let uuid = null;
 
   if (snapshot.exists) {
     profile = snapshot.data();
+    uuid = id;
   }
-  return { uid: id, profile: profile };
+  return { uid: uuid, profile: profile };
 };
 const mapStateToProps = state => {
   return {
