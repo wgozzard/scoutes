@@ -84,7 +84,7 @@ export function Confirm(props) {
               <ListItemText primary="SAT" secondary={sat} />
             </ListItem>
             <ListItem>
-              <ListItemText primary="ETC" secondary={Bench} />
+              <ListItemText primary="Fitness/Achievements:" secondary={Bench} />
             </ListItem>
             <ListItem>
               <ListItemText primary="Coaches note" secondary={coachesnote} />

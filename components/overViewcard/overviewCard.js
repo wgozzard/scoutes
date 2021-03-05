@@ -22,6 +22,7 @@ const useStyles = makeStyles(theme => ({
 const OverviewCard = ({ profile }) => {
   const classes = useStyles();
   const { Bench, overview, coachesnote, stats } = profile;
+  const splited = Bench.split(',');
   return (
     <div className={classes.root}>
       <Paper className={classes.paper} variant="outlined" elevation={4}>
@@ -49,13 +50,27 @@ const OverviewCard = ({ profile }) => {
         <Typography gutterBottom className={classes.meta} variant="subtitle1" component="h2">
           {stats}
         </Typography>
-        <Typography variant="h5" gutterBottom component="h2" className={classes.heading}>
-          Other Stats:
-        </Typography>
         {Bench.length > 0 && (
-          <Typography className={classes.meta} variant="subtitle1" component="h2" className={classes.bio}>
-            {Bench}
-          </Typography>
+          <>
+            <Typography variant="h5" gutterBottom component="h2" className={classes.heading}>
+              Fitness/Achievements:
+            </Typography>
+            <>
+              {splited.map((stat, i) => {
+                return (
+                  <Typography
+                    key={i}
+                    className={classes.meta}
+                    variant="subtitle1"
+                    component="h2"
+                    className={classes.bio}
+                  >
+                    {stat}
+                  </Typography>
+                );
+              })}
+            </>
+          </>
         )}
       </Paper>
     </div>
