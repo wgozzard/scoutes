@@ -45,7 +45,7 @@ const splitedStats = stats.split(',');
           </>
         )}
 
-        {Bench.length > 0 && (
+        {stats.length > 0 && (
           <>
             <Typography variant="h5" gutterBottom component="h2" className={classes.heading}>
               Stats:
