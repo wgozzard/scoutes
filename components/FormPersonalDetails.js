@@ -60,7 +60,7 @@ const FormPersonalDetails = props => {
             placeholder="G - 52, AB - 72,
             TB - 30,
             2B - 15,
-            3B - 5,HR - 12"
+            3B - 5,HR - 12  .Please note: use comma after word or sentence to create new line"
             aria-label="Stats"
             onChange={e => handleChange('stats', e)}
             value={values.stats}

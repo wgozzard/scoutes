@@ -93,7 +93,7 @@ function FormProfileDetails(props) {
             value={values.Bench}
             onChange={e => handleChange('Bench', e)}
             rowsMin={4}
-            placeholder="Share weight lifting, fitness stats, records held here (optional i.e. 40 yd dash - 4.4).Please note: use comma as a separator"
+            placeholder="Share weight lifting, fitness stats, records held here (optional i.e. 40 yd dash - 4.4).Please note: use comma after word or sentence to create new line"
             style={{ fontSize: '1em', fontFamily: 'roboto', fontWeight: '300', padding: '10px' }}
           />
           <br />
