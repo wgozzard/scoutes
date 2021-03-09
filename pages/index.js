@@ -86,6 +86,12 @@ export default function Home() {
             </Button>
           </a>
         </Link>
+        <p>
+          Please watch our video tutorial here
+          <Link href="https://vimeo.com/521513021">
+            <a target="_blank">(https://vimeo.com/521513021)</a>
+          </Link>
+        </p>
       </div>
 
       <div className={classes.main}>
