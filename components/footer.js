@@ -29,11 +29,9 @@ const Footer = () => {
       >
         <Link href="https://www.freeprivacypolicy.com/live/93294b3b-7ac4-41b5-8e7f-82b9e40477be">
           <a>
-            <h4>Privacy policy</h4>
+            <h4>Privacy policy - Terms and Conditions</h4>
           </a>
         </Link>
-        <span> - </span>
-        <h4>Terms and Conditions</h4>
       </div>
     </footer>
   );
