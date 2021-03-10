@@ -5,7 +5,7 @@ import YouTubeIcon from '@material-ui/icons/YouTube';
 import Link from 'next/link';
 
 const SocialCard = props => {
-  const { fullName, facebook, twitter, instagram, youtube } = props.profile;
+  const { fullName, facebook, tweeter, instagram, youtube } = props.profile;
   return (
     <div
       style={{
@@ -28,8 +28,8 @@ const SocialCard = props => {
             </a>
           </Link>
         )}
-        {twitter && (
-          <Link href={twitter}>
+        {tweeter && (
+          <Link href={tweeter}>
             <a>
               <TwitterIcon fontSize="large" style={{ color: 'rgb(29, 161, 242)', margin: 10 }} />
             </a>
