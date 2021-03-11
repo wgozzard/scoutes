@@ -112,7 +112,7 @@ export default function Home() {
         </Typography>
         <Typography className={classes.discptn} align="center" variant="subtitle1" gutterBottom>
           How to load a video? You will need to host your video(s) at YouTube for now. When your video is online simply
-          click the SHARE button next to the thumbs up and thumbs down icons and simply copy and paste that link into the
+          click the SHARE button next to the thumbs up/thumbs down icons and simply copy and paste that link into the
           add video box.
         </Typography>
       </div>
