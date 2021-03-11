@@ -101,14 +101,15 @@ export default function Home() {
         <Typography className={classes.discptn} align="center" variant="subtitle1" gutterBottom>
           Once you have a ScoutsProfile, you will be able to send one link to recruiters and coaches that compile all
           your information in one place for free!  For example, Dear Recruiter, please take a look at my{' '}
-          profile scoutsprofile.com/profile/TNwOJVTgWwbV4K849BSYCbfCChI2 
+          profile scoutsprofile.com/profile/TNwOJVTgWwbV4K849BSYCbfCChI2, copy and past this into a browser for a profile
+          example.
         </Typography>
         <Typography className={classes.discptn} align="center" variant="subtitle1" gutterBottom>
           Profiles will remain private and only those you share you link with will be able to access the profile.
         </Typography>
         <Typography className={classes.discptn} align="center" variant="subtitle1" gutterBottom>
-          Recruiting tip 101 – create a new email for recruiting correspondence. It will be easier to stay organized by
-          having all of your messages in one place!
+          How to load a video – When you upload a video to YouTube, you will a button to share the video next to the
+          the Thumbs up and Thumbs down icon.  Simply click on that button and add that text!
         </Typography>
       </div>
     </div>
