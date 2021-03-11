@@ -101,7 +101,7 @@ export default function Home() {
         <Typography className={classes.discptn} align="center" variant="subtitle1" gutterBottom>
           Once you have a ScoutsProfile, you will be able to send one link to recruiters and coaches that compile all
           your information in one place for free!  For example, Dear Recruiter, please take a look at my{' '}
-          profile <Link href = "scoutsprofile.com/profile/TNwOJVTgWwbV4K849BSYCbfCChI2"> <a target="_blank">(https://scoutsprofile.com/profile/TNwOJVTgWwbV4K849BSYCbfCChI2"</a></Link>
+          profile scoutsprofile.com/profile/TNwOJVTgWwbV4K849BSYCbfCChI2 
         </Typography>
         <Typography className={classes.discptn} align="center" variant="subtitle1" gutterBottom>
           Profiles will remain private and only those you share you link with will be able to access the profile.
