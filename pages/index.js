@@ -111,8 +111,8 @@ export default function Home() {
           Profiles will remain private and only those you share your link with will be able to access the profile.
         </Typography>
         <Typography className={classes.discptn} align="center" variant="subtitle1" gutterBottom>
-          How to load a video? You will need to host your video(s) at YouTube for now. When your video is online simply
-          click the SHARE button next to the thumbs up/thumbs down icons and simply copy and paste that link into the
+          How to load a video? You will need to host your video(s) at YouTube for now. When your video is online
+          click the SHARE button next to the thumbs up/thumbs down icons and copy and paste that link into the
           add video box.
         </Typography>
       </div>
