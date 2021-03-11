@@ -102,11 +102,11 @@ export default function Home() {
         <Typography className={classes.discptn} align="center" variant="subtitle1" gutterBottom>
           Once you have a ScoutsProfile, you will be able to send one link to recruiters and coaches that compile all
           your information in one place for free!  For example, Dear Recruiter, please take a look at my{' '}
-          profile scoutsprofile.com/profile/TNwOJVTgWwbV4K849BSYCbfCChI2, copy and past this into a browser for a profile
+          profile - scoutsprofile.com/profile/TNwOJVTgWwbV4K849BSYCbfCChI2, copy and past this into a browser for a profile
           example.
         </Typography>
         <Typography className={classes.discptn} align="center" variant="subtitle1" gutterBottom>
-          Profiles will remain private and only those you share you link with will be able to access the profile.
+          Profiles will remain private and only those you share your link with will be able to access the profile.
         </Typography>
         <Typography className={classes.discptn} align="center" variant="subtitle1" gutterBottom>
           How to load a video – When you upload a video to YouTube, you will a button to share the video next to the
