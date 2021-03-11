@@ -77,8 +77,10 @@ export default function Home() {
         <Typography className={classes.discptn} align="center" variant="subtitle1" gutterBottom gutterBottom>
           Today, student-athletes have an incredible opportunity to take advantage of various internet tools that can
           aid in their college recruiting process. It's also important that the student-athlete submit clear, concise
-          and easy to obtain information to prospective colleges. Copy and paste the example profile below for an example!
-          Also, please see instructions below on how to upload your video(s) from YouTube!
+          and easy to obtain information to prospective recruiters and coaches. 
+        </Typography>
+        <Typography className={classes.discptn} align="center" variant="subtitle1" gutterBottom gutterBottom>
+          Please scroll below to see a sample profile and instructions on how to upload your video(s) from YouTube!
         </Typography>
         <Link href="/signin">
           <a>
@@ -102,15 +104,16 @@ export default function Home() {
         <Typography className={classes.discptn} align="center" variant="subtitle1" gutterBottom>
           Once you have a ScoutsProfile, you will be able to send one link to recruiters and coaches that compile all
           your information in one place for free!  For example, Dear Recruiter, please take a look at my{' '}
-          profile - scoutsprofile.com/profile/TNwOJVTgWwbV4K849BSYCbfCChI2, copy and past this into a browser for a profile
-          example.
+          profile - scoutsprofile.com/profile/TNwOJVTgWwbV4K849BSYCbfCChI2 (copy and past this into a browser for a profile
+          example.)
         </Typography>
         <Typography className={classes.discptn} align="center" variant="subtitle1" gutterBottom>
           Profiles will remain private and only those you share your link with will be able to access the profile.
         </Typography>
         <Typography className={classes.discptn} align="center" variant="subtitle1" gutterBottom>
-          How to load a video – When you upload a video to YouTube, you will a button to share the video next to the
-          the Thumbs up and Thumbs down icon.  Simply click on that button and add that text!
+          How to load a video? You will need to host your video(s) at YouTube for now. When your video is online simply
+          click the SHARE button next to the thumbs up and thumbs down icons and simply copy and paste that link into the
+          add video box.
         </Typography>
       </div>
     </div>
