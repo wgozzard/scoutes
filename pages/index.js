@@ -115,6 +115,9 @@ export default function Home() {
           click the SHARE button next to the thumbs up/thumbs down icons and copy and paste that link into the
           add video box.
         </Typography>
+        <Typography className={classes.discptn} align="center" variant="subtitle1" gutterBottom>
+         For questions or inquiries, please email sales@scoutsprofile.com
+        </Typography>
       </div>
     </div>
   );
