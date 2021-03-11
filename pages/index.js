@@ -77,7 +77,7 @@ export default function Home() {
         <Typography className={classes.discptn} align="center" variant="subtitle1" gutterBottom gutterBottom>
           Today, student-athletes have an incredible opportunity to take advantage of various internet tools that can
           aid in their college recruiting process. It's also important that the student-athlete submit clear, concise
-          and easy to obtain information to prospective colleges.
+          and easy to obtain information to prospective colleges. Copy and paste the example profile below for an example!
         </Typography>
         <Link href="/signin">
           <a>
