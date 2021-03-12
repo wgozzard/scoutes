@@ -44,7 +44,7 @@ function FormProfileDetails(props) {
       <div className={classes.root}>
         <form className={classes.formcontainer}>
           <TextField
-            placeholder="6'1"
+            placeholder=""
             label="Height"
             onChange={e => handleChange('Height', e)}
             value={values.Height}
@@ -55,7 +55,7 @@ function FormProfileDetails(props) {
           />
           <br />
           <TextField
-            placeholder="0"
+            placeholder=""
             label="Weight"
             onChange={e => handleChange('Weight', e)}
             value={values.Weight}
@@ -77,7 +77,7 @@ function FormProfileDetails(props) {
           />
           <br />
           <TextField
-            placeholder="28-Feb-2000"
+            placeholder=""
             label="Birthdate"
             onChange={e => handleChange('Birthdate', e)}
             value={values.Birthdate}
