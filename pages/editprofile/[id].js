@@ -4,24 +4,34 @@ import Link from 'next/link';
 import { connect } from 'react-redux';
 import { firestore } from '../../firebase/firebase-config';
 const App = ({ uid, user }) => {
-  if (uid === null || user === null) {
+  if (user.id === null) {
+    return (
+      <div style={{ width: '100%', height: '80vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        you are not logged in.
+      </div>
+    );
+  }
+  if (uid !== null) {
+    if (user.id !== uid && uid !== null) {
+      return (
+        <div style={{ width: '100%', height: '80vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          You are not the owner of this account
+        </div>
+      );
+    }
+  }
+
+  if (uid === null && user.id === null) {
     return (
       <div style={{ width: '100%', height: '80vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         this account does not exists or you are not logged in.
       </div>
     );
-  }
-  if (user.id !== uid) {
-    return (
-      <div style={{ width: '100%', height: '80vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        You are not the owner of this account
-      </div>
-    );
   } else {
     return (
       <div className="App">
-        {user && user.id === uid ? (
-          <UserForm uid={uid} />
+        {user && user.id ? (
+          <UserForm uid={user.id} />
         ) : (
           <div
             style={{ width: '100%', height: '80vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
@@ -40,6 +50,7 @@ const App = ({ uid, user }) => {
 App.getInitialProps = async ({ query }) => {
   const { id } = query;
   const profileRef = firestore.doc(`profiles/${id}`);
+
   const snapshot = await profileRef.get();
 
   let uuid = null;
