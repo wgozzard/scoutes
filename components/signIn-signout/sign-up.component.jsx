@@ -31,7 +31,7 @@ class Signup extends Component {
       const created = await createUserindatabase(user, fullName);
 
       if (created) {
-        router.push(`/profile/${user.uid}`);
+        router.push(`/editprofile/${user.uid}`);
       }
     } catch (error) {
       alert(error.message);
