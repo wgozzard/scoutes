@@ -38,10 +38,9 @@ const Profile = ({ uid, user, profile }) => {
   if (uid === null && user.id !== null) {
     return (
       <div style={{ width: '100%', height: '80vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        this account does not exists or <div>You have nothing to show</div>
         <Link href={`/editprofile/${user.id}`}>
           <a>
-            Edit your profile
+            You have nothing to show Edit your profile
             <Edit />
           </a>
         </Link>
