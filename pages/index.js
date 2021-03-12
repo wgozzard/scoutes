@@ -77,7 +77,10 @@ export default function Home() {
         <Typography className={classes.discptn} align="center" variant="subtitle1" gutterBottom gutterBottom>
           Today, student-athletes have an incredible opportunity to take advantage of various internet tools that can
           aid in their college recruiting process. It's also important that the student-athlete submit clear, concise
-          and easy to obtain information to prospective colleges.
+          and easy to obtain information to prospective recruiters and coaches. 
+        </Typography>
+        <Typography className={classes.discptn} align="center" variant="subtitle1" gutterBottom gutterBottom>
+          Please scroll below to see a sample profile and instructions on how to upload your video(s) from YouTube!
         </Typography>
         <Link href="/signin">
           <a>
@@ -101,14 +104,19 @@ export default function Home() {
         <Typography className={classes.discptn} align="center" variant="subtitle1" gutterBottom>
           Once you have a ScoutsProfile, you will be able to send one link to recruiters and coaches that compile all
           your information in one place for free!  For example, Dear Recruiter, please take a look at my{' '}
-          profile scoutsprofile.com/ABC123
+          profile - scoutsprofile.com/profile/TNwOJVTgWwbV4K849BSYCbfCChI2 (copy and past this into a browser for a profile
+          example.)
         </Typography>
         <Typography className={classes.discptn} align="center" variant="subtitle1" gutterBottom>
-          Profiles will remain private and only those you share you link with will be able to access the profile.
+          Profiles will remain private and only those you share your link with will be able to access the profile.
         </Typography>
         <Typography className={classes.discptn} align="center" variant="subtitle1" gutterBottom>
-          Recruiting tip 101 – create a new email for recruiting correspondence. It will be easier to stay organized by
-          having all of your messages in one place!
+          How to load a video? You will need to host your video(s) at YouTube for now. When your video is online
+          click the SHARE button next to the thumbs up/thumbs down icons and copy and paste that link into the
+          add video box.
+        </Typography>
+        <Typography className={classes.discptn} align="center" variant="subtitle1" gutterBottom>
+         For questions or inquiries, please email sales@scoutsprofile.com
         </Typography>
       </div>
     </div>
