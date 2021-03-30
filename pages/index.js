@@ -116,7 +116,7 @@ export default function Home() {
           add video box.
         </Typography>
         <Typography className={classes.discptn} align="center" variant="subtitle1" gutterBottom>
-         For questions or inquiries, please email sales@scoutsprofile.com
+         For questions or inquiries, please email scoutsprofile@protonmail.com
         </Typography>
       </div>
     </div>
