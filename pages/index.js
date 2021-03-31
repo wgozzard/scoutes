@@ -69,10 +69,10 @@ export default function Home() {
       </Head>
 
       <div className={classes.main2}>
-        <Typography className={classes.heading} align="center" variant="h2" gutterBottom>
+        <Typography className={classes.heading} align="center" variant="h3" gutterBottom>
           Simplify Submissions to
-          <br /> College Coaches and
-          <br /> Recruiters!
+          <br /> College Coaches
+          <br /> for free!
         </Typography>
         <Typography className={classes.discptn} align="center" variant="subtitle1" gutterBottom gutterBottom>
           Today, student-athletes have an incredible opportunity to take advantage of various internet tools that can
